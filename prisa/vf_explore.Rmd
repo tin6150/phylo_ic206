@@ -1,0 +1,40 @@
+Poking around the vf result from abricate 
+PRISA isolates
+
+
+
+# combined tsv
+```{r combined tsv}
+
+library(pacman)
+p_load(dplyr)
+
+#file_path_csv="/home/tin/winHome/tin-gh-in1drv/phylo_ic206/prisa"
+file_path_tsv="vf_read/xfer1/combined+head.csv"
+
+combined = read_tsv( file_path_tsv )
+
+#View(combined)
+
+summary(combined)
+str(combined)
+
+combined %>% select(DATABASE) %>% unique()
+
+##read_tsv
+
+```
+
+# summary.tab tsv
+```{r summary.tab tsv}
+
+
+summary_path_tsv="vf_read/xfer1/summary.tab"
+summary = read_tsv( summary_path_tsv )
+
+View(summary)
+
+summary(summary)
+str(summary)
+
+```
