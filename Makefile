@@ -5,9 +5,12 @@ CFLAGS=-c -Wall -I$(INC_DIR)
 # DEPS = split.h
 CXX = g++
 CXXFLAGS = -g -c -Wall -I$(INC_DIR)
+# RM = rm
+# default to rm -f, the nice thing about -f is that it doesn't whine if file has already been removed
 
 # compiler flags:
 #  -g     - this flag adds debugging information to the executable file
+#  -c     - compile .o but dont link em
 #  -Wall  - this flag is used to turn on most compiler warnings
  
 # The build target 
