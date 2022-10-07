@@ -74,7 +74,8 @@ if (numUniforms > 1)
 	variance = s / (numExponentials - 1);
 std::cout << "Results for " << numExponentials << " exponential(" << lambda << ") random variables" << std::endl;
 std::cout << " Mean: " << mean << " (Expected=" << 1.0/lambda << ")" << std::endl;
-std::cout << " Variance: " << variance << " (Expected=" << 1.0/(lambda*lambda) << ")" << st
+std::cout << " Variance: " << variance << " (Expected=" << 1.0/(lambda*lambda) << ")" << std::endl;
+// p165 , 
 return 0;
 }
 

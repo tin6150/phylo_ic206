@@ -1,7 +1,46 @@
+# INC_DIR = ../StdCUtil
+INC_DIR = .
+CFLAGS=-c -Wall -I$(INC_DIR)
+# CPPFLAGS = -std=c++14 -g -Wall -pedantic
+# DEPS = split.h
+CXX = g++
+CXXFLAGS = -g -c -Wall -I$(INC_DIR)
+
+# compiler flags:
+#  -g     - this flag adds debugging information to the executable file
+#  -Wall  - this flag is used to turn on most compiler warnings
+ 
+# The build target 
+# TARGET = ch6
+# TARGET = Sn_RndVarMain.exe
+TARGET = Sn_RndVarMain
+ 
+all: $(TARGET)
+ 
+$(TARGET): $(TARGET).cpp
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(TARGET).cpp
+ 
+clean:
+	$(RM) $(TARGET)
+
+
+
+Sn_RndVarMain.exe: Sn_RndVarMain.o RandomVariable.o
+	${CPP} ${CPPFLAGS} ${INC} -o $@.ex $^
+
+Sn_RndVarMain.o: Sn_RndVarMain.cpp RandomVariable.hpp
+	${CPP} -c ${CPPFLAGS} ${INC} $< -o $@
+
+RandomVariable.o: RandomVariable.hpp
+
+
 # ch6  RandomVariable
-all:
-	#/usr/bin/g++ RandomVariable.cpp -Bstatic -o RandomVariable.o
-	/usr/bin/g++ Sn_RndVarMain.cpp  -Bstatic -o Sn_RndVarMain.exe
+old_all:
+	#-- /usr/bin/g++ RandomVariable.cpp  -Bstatic -o RandomVariable.o
+	/usr/bin/g++ Sn_RndVarMain.cpp -L. -Bstatic -o Sn_RndVarMain.exe
+
+#%.o: %.cpp $(DEPS)
+#	$(CXX) -o $@ $< $(CXXFLAGS)
 
 
 ch5:
@@ -18,3 +57,6 @@ completed:
 
 ref-only:
 	pgcc hello.c -Bstatic -o hello_pgi
+
+
+
