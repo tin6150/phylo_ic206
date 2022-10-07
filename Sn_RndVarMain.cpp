@@ -8,7 +8,7 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-	cout << "bye bye" << endl;
+	cout << "bye bye bye" << endl;
 }
 
 
